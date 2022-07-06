@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* font-family: 'Press Start 2P', cursive; */
+
+@font-face {
+    font-family: 'nes';
+    src: url(../img/font/kongtext.ttf);
+}
+
+* {
+    font-family: 'nes';
+}
+
+body {
+    background-image: url('../img/fond.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+#allies,
+#enemies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enemies {
+    margin-left: -15rem;
+    margin-top: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#enemies img {
+    margin: 0rem 3rem 0rem 3rem;
+    width: 100px;
+}
+
+progress {
+    height: 18px!important;
+    width: 180px!important;
+}
+
+#allies div {
+    margin: 0rem 2rem 0rem 2rem;
+    align-items: center;
+}
+
+#druid {
+    margin-top: 20px!important;
+}
+
+#guerrier {
+    margin-top: 2px!important;
+}
+
+#guerrier img {
+    width: 100px;
+    margin-bottom: 8px;
+}
+
+#magicien img {
+    width: 120px;
+}
+
+#druide img {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+div button {
+    margin-bottom: 1rem!important;
+    width: 10rem;
+}
+
+.nes-container {
+    width: 500px;
+    background-color: white;
+    margin: auto;
+}
+
+section {
+    margin-top: -150px;
+}

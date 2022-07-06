@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=*, initial-scale=1.0">
+    <meta name="description" content="Petit jeu tour par tour">
+    <link rel="icon" href="assets/img/favicon-32x32.png" />
+    <title>Rpg Ana</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="nes-container with-title is-centered">
+        <p class="title">bienvenue</p>
+        <p class="contenu">attaquez le monstre!</p>
+    </div>
+    <section>
+        <figure id="enemies">
+            <img src="assets/img/barzork_bourrin.png" alt="">
+            <progress id="monstre-pv" class="nes-progress is-success" value="400" max="400"></progress>
+        </figure>
+        <figure id="allies">
+            <div id="guerrier">
+                <img src="assets/img/fighter.png" alt="">
+                <progress id="guerrier-pv" class="nes-progress is-success" value="350" max="350"></progress>
+                <progress id="guerrier-pm" class="nes-progress is-primary" value="50" max="50"></progress>
+            </div>
+            <div id="magicien">
+                <img src="assets/img/mage.png" alt="">
+                <progress id="magicien-pv" class="nes-progress is-success" value="170" max="170"></progress>
+                <progress id="magicien-pm" class="nes-progress is-primary" value="200" max="200"></progress>
+            </div>
+            <div id="druide">
+                <img src="assets/img/druide.png" alt="">
+                <progress id="druide-pv" class="nes-progress is-success" value="150" max="150"></progress>
+                <progress id="druide-pm" class="nes-progress is-primary" value="350" max="350"></progress>
+            </div>
+            <div id="button">
+                <button id="attaque" type="button" class="nes-btn is-primary">Attaque</button>
+                <button id="defense" type="button" class="nes-btn is-success">Coup spécial</button>
+                <button id="ultime" type="button" class="nes-btn is-error"> Ultime </button>
+            </div>
+        </figure>
+    </section>
+
+
+
+    <script src="assets/js/class.js"></script>
+</body>
+
+</html>
