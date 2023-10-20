@@ -1,6 +1,6 @@
 var selectptitle = document.querySelector(".title");
 var selectp = document.querySelector(".contenu");
-
+/*création d'une classe Personnage qui va me permettre de crée mes 3 personnages jouables avec les statistique nécéssaire a la mise en place du jeu*/
 class Personnage {
     constructor(pseudo, niveau, classe, sante, santemax, mana, manamax, attaque) {
         this.pseudo = pseudo,
@@ -12,17 +12,18 @@ class Personnage {
             this.attaque = attaque,
             this.niveau = niveau
     }
-
-    attaquer(personnage) {
+/*méthodes qui seront communes a tous les personnages, attaquer permet de faire des dégats en fonction de l attaque du personnage et de recuperer entre 0 et i/4 des points de mana*/
+    attaquer(ennemy) {
         let selectProgPm = document.querySelector("#" + this.classe + "-pm");
-        let pvenemie = document.querySelector("#" + personnage.classe + "-pv");
+        let pvenemie = document.querySelector("#" + ennemy.classe + "-pv");
 
-        personnage.sante -= this.attaque;
+        ennemy.sante -= this.attaque;
 
-        this.mana += Math.floor(Math.random() * 10);
+        this.mana += Math.floor(Math.random() * this.mana/4);
         selectProgPm.value = this.mana;
-        pvenemie.value = personnage.sante;
+        pvenemie.value = ennemy.sante;
     }
+    /*méthode qui permet de monter de niveau et d augmenter en statistique */
     evoluer() {
         var selectProgPv = document.querySelector("#" + this.classe + "-pv");
         var selectProgPm = document.querySelector("#" + this.classe + "-pm");
@@ -37,13 +38,19 @@ class Personnage {
         selectProgPm.max = this.manamax;
         selectProgPm.value = this.mana;
     }
+    /*méthode qui permet de verifier les pv et d afficher les barres en fonction ou d empecher le personnage de jouer en étant mort */
     verifySante() {
+        var selectProgPv = document.querySelector("#" + this.classe + "-pv");
+        var selectperso = document.querySelector("#" + this.classe + "-img");
         if (this.sante <= (this.santemax / 2)) {
-
-        } else if (this.sante <= (this.santemax / 4)) {
-
-        } else if (this.sante <= 0) {
-
+            selectProgPv.className="nes-progress is-warning";
+        }
+        if (this.sante <= (this.santemax / 4)) {
+            selectProgPv.className="nes-progress is-error";
+        } 
+        
+        if (this.sante <= 0) {
+            selectperso.className="die"
         }
     }
 }
